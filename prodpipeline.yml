@@ -9,7 +9,7 @@ variables:
   - group: remote_state
 
 pool:
-  name: ggagents
+  name: maagents
 stages:
 - stage: BuildStage
   jobs:
@@ -50,7 +50,7 @@ stages:
     steps:
     - task: ManualValidation@1
       inputs:
-        notifyUsers: 'gauravgupta.id1@gmail.com'
+        notifyUsers: 'mayank17717@gmail.com'
         onTimeout: 'resume'
   - job: TerraformApply
     dependsOn:
