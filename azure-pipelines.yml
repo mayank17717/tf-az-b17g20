@@ -19,7 +19,7 @@ parameters:
       - prod
 
 pool:
-  name: ggagents
+  name: maagents
 stages:
 - stage: BuildStage
   jobs:
@@ -82,13 +82,13 @@ stages:
     steps:
     - task: ManualValidation@1
       inputs:
-        notifyUsers: 'gauravgupta.id1@gmail.com'
+        notifyUsers: 'mayank17717@gmail.com'
         onTimeout: 'resume'
   - job: TerraformApply
     dependsOn:
     - ManualValidation
     pool:
-      name: ggagents
+      name: maagents
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     steps:
     - task: TerraformInstaller@1
